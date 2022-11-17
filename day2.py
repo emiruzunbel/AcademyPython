@@ -1,8 +1,8 @@
-print("2.Gün Başlangıç")
+print("2.Gün Başlangiç")
 
-#Kullanıcıdan Girdi Alma : 
+#Kullanicidan Girdi Alma : 
 ##########################
-#Pyhton da input isimli bir fonksiyon kullanılırız.
+#Pyhton da input isimli bir fonksiyon kullaniliriz.
 userInput=input()
 print(f"Girilen Değer : {userInput}")
 
@@ -31,9 +31,9 @@ else:
 
     #Workshop1
     ##################
-    #Kullanıcıdan vize ve final notları alacak
-    #Vize ve final notları 50.4 gibi ondalıklı sayılar olabilir.
-    #Uygulama ortalamayı hesaplayacak ve ortalamaya göre
+    #Kullanicidan vize ve final notlari alacak
+    #Vize ve final notlari 50.4 gibi ondalikli sayilar olabilir.
+    #Uygulama ortalamayi hesaplayacak ve ortalamaya göre
     #Vize 0.40 , final 0.60 etki edecektir.
     #0-49 FF 
     #50-60 DD
@@ -47,34 +47,59 @@ print("Vize Notunuzu giriniz.")
 inputVize=float(input())
 print("Final Notunuzu giriniz.")
 inputFinal=float(input())
-ortalama=((inputVize*0.40 + inputFinal*0.60))
+meanGrade=((inputVize*0.40 + inputFinal*0.60))
 
-if ortalama >=0 and ortalama <=49:
-    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{ortalama} ve Harfli notunuz : FF")
-elif ortalama >49 and ortalama <=60:
-    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{ortalama} ve Harfli notunuz : DD")
-elif ortalama >60 and ortalama <= 70:
-    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{ortalama} ve Harfli notunuz : CC")
-elif ortalama >70 and ortalama <=80:
-    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{ortalama} ve Harfli notunuz : BB")
+if meanGrade >=0 and meanGrade <=49:
+    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{meanGrade} ve Harfli notunuz : FF")
+elif meanGrade >49 and meanGrade <=60:
+    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{meanGrade} ve Harfli notunuz : DD")
+elif meanGrade >60 and meanGrade <= 70:
+    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{meanGrade} ve Harfli notunuz : CC")
+elif meanGrade >70 and meanGrade <=80:
+    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{meanGrade} ve Harfli notunuz : BB")
 else :
-    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{ortalama} ve Harfli notunuz : AA")
+    print(f"Vize ve Final Sinavlarinizin Ortamalasi :{meanGrade} ve Harfli notunuz : AA")
 
 
 #WORKSHOP 2 
 ##################
-print("Lütfen ortalamasını hesaplamak istediğiniz derslerin adetini giriniz.")
+print("Lütfen ortalamasini hesaplamak istediğiniz derslerin adetini giriniz.")
 lessonQuantity =int(input())
+count=0
+successList=[]
+failedList=[]
+
 
 
 while 0<lessonQuantity:
     midtermGrade=float(input("Vize notunu giriniz : "))
     finalGrade=float(input("Final notunu giriniz :"))
     meanGrade=midtermGrade*0.40 +finalGrade*0.60
-    if ortalama<=50:
-        print("Kaldınız")
-    elif 50<ortalama<=100:
+    if meanGrade<=50:
+        print("Kaldiniz")
+        count +=1
+        failedList.append([count,meanGrade])
+        
+    elif 50<meanGrade<=100:
         print("Geçtiniz")
+        count +=1
+        successList.append([count,meanGrade])
+        
     else:
         print("Geçersiz değer girdiniz.")
     lessonQuantity-=1
+
+print(f"Başarili olduğunuz dersler {successList}")
+print(f"Başarisiz olduğunuz dersler {failedList}")
+    
+
+
+#For Döngüsü :
+
+for i in range(6):
+    print(i)
+
+students = ["Nilüfer","Özlem","Berk","Zakir"]
+for i in students:
+    print(i)
+
