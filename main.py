@@ -51,3 +51,5 @@ company ="Etiya"
 print(name + " " + age +" "+"yaşında" +" "+ company + "' da çalişiyor.")
 print(f"{name} {age} yaşında {company}'de çalişiyor.")
 print(age)
+
+
